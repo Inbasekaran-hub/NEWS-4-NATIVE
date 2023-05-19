@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="{% static 'assets/'% }"
+  data-template="horizontal-menu-template-no-customizer"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>NEWS4NATIVE</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.ico' %}" /> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/tabler-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/flag-icons.css' %}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/core.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/theme-default.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/node-waves/node-waves.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/typeahead-js/typeahead.css' %}" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.css' %}"></script>
+
+   
+    <script src="{% static 'assets/js/config.css' %}"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+      <div class="layout-container">
+        <!-- Navbar -->
+
+
+
+        <!-- / Navbar -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <!-- <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4> -->
+
+              <!-- Bootstrap Table with Header - Dark -->
+              <div class="card">
+                <!-- <h5 class="card-header">Dark Table head</h5> -->
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>S.No</th>
+                        <th>Source Language</th>
+                        <th>Converted Language</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      {% for sourc , dest in content %}
+                      <tr>
+                        <td>{{ forloop.counter}}</td>
+                        <td>{{sourc}}</td>
+                        <td>{{dest}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--/ Bootstrap Table with Header Dark -->
+
+              <hr class="my-5" />
+
+              <div class='row'>
+                <audio controls>
+                    <source src="{% static 'news.mp3' %}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            </div>
+            <!--/ Content -->
+
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!--/ Content wrapper -->
+        </div>
+
+        <!--/ Layout container -->
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+
+    <!--/ Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.css' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.css' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.css' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"></script>
+    <script src="{% static 'assets/vendor/libs/node-waves/node-waves.css' %}"></script>
+
+    <script src="{% static 'assets/vendor/libs/hammer/hammer.css' %}"></script>
+    <script src="{% static 'assets/vendor/libs/i18n/i18n.css' %}"></script>
+    <script src="{% static 'assets/vendor/libs/typeahead-js/typeahead.css' %}"></script>
+
+    <script src="{% static 'assets/vendor/js/menu.css' %}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.css' %}"></script>
+
+    <!-- Page JS -->
+  </body>
+</html>

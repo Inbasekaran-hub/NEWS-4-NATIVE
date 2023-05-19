@@ -1,0 +1,25 @@
+{% for item in data %}
+<tr>
+  <td>
+     <strong>{{ forloop.counter }}</strong>
+  </td>
+  <td>{{item}}</td>
+  <td>
+    <strong>{{item.destin_news}}</strong>
+  </td>
+</tr>
+{% endfor %}
+
+
+
+<!-- ------------ -->
+
+{% for item in data %}
+<tr>
+  <td>{{forloop.counter}}</td>
+  {% for source in sour_news %}
+  <td>{{source}}</td>
+  {% endfor %}
+  <td>dssdsdsds</td>
+</tr>
+{% endfor %}
